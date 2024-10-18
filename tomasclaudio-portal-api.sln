@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34009.444
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tomasclaudio-portal-api", "powertread-portal-api\tomasclaudio-portal-api.csproj", "{A53E52DF-5267-4C41-AD4F-38143386EA75}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "tomasclaudio-portal-api", "tomasclaudoi-portal-api\tomasclaudio-portal-api.csproj", "{6B63A487-53F6-47A9-9ADC-D2F3CCFF5497}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +13,14 @@ Global
 		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A53E52DF-5267-4C41-AD4F-38143386EA75}.Debug|Any CPU.ActiveCfg = Debug|x64
-		{A53E52DF-5267-4C41-AD4F-38143386EA75}.Debug|Any CPU.Build.0 = Debug|x64
-		{A53E52DF-5267-4C41-AD4F-38143386EA75}.Debug|x64.ActiveCfg = Debug|x64
-		{A53E52DF-5267-4C41-AD4F-38143386EA75}.Debug|x64.Build.0 = Debug|x64
-		{A53E52DF-5267-4C41-AD4F-38143386EA75}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A53E52DF-5267-4C41-AD4F-38143386EA75}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A53E52DF-5267-4C41-AD4F-38143386EA75}.Release|x64.ActiveCfg = Release|x64
-		{A53E52DF-5267-4C41-AD4F-38143386EA75}.Release|x64.Build.0 = Release|x64
+		{6B63A487-53F6-47A9-9ADC-D2F3CCFF5497}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B63A487-53F6-47A9-9ADC-D2F3CCFF5497}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B63A487-53F6-47A9-9ADC-D2F3CCFF5497}.Debug|x64.ActiveCfg = Debug|x64
+		{6B63A487-53F6-47A9-9ADC-D2F3CCFF5497}.Debug|x64.Build.0 = Debug|x64
+		{6B63A487-53F6-47A9-9ADC-D2F3CCFF5497}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B63A487-53F6-47A9-9ADC-D2F3CCFF5497}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B63A487-53F6-47A9-9ADC-D2F3CCFF5497}.Release|x64.ActiveCfg = Release|x64
+		{6B63A487-53F6-47A9-9ADC-D2F3CCFF5497}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

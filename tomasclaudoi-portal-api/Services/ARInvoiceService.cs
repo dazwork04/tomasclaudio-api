@@ -1,5 +1,7 @@
 ﻿using B1SLayer;
+using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
+using SAPB1SLayerWebAPI.Context;
 using SAPB1SLayerWebAPI.Models;
 using SAPB1SLayerWebAPI.Models.SLayer;
 using SAPB1SLayerWebAPI.Utils;
@@ -10,12 +12,35 @@ namespace SARB1SLayerWebARI.Services
 {
     public class ARInvoiceService
     {
+        #region VARIABLES
+        private readonly IConfiguration configuration;
+        #endregion
+
+        public ARInvoiceService(IConfiguration configuration)
+        {
+            this.configuration = configuration;
+        }
+
         // GET AR INVOICES
         public async Task<Response> GetARInvoicesAsync(int userId, string companyDB, char status, string dateFrom, string dateTo, Paginate paginate) => await Task.Run(async () =>
         {
             try
             {
-                var connection = Main.GetConnection(userId, companyDB);
+                //var connection = Main.GetConnection(userId, companyDB);
+                int sap_id = Int32.Parse(configuration.GetValue<string>("SAP_CRED:ID")!);
+                var sap_code = configuration.GetValue<string>("SAP_CRED:CODE")!;
+                var sap_pass = configuration.GetValue<string>("SAP_CRED:PASS")!;
+                var sap_db = configuration.GetValue<string>("SAP_CRED:DB")!;
+
+                SLayerConnectionLib.Main.InitConnection(sap_id, new SLayerConnectionLib.Models.Credential
+                {
+                    Username = sap_code,
+                    Password = sap_pass,
+                    CompanyDB = sap_db,
+                    SLUrl = configuration.GetValue<string>("SL_URL")!
+                });
+
+                var connection = SLayerConnectionLib.Main.GetConnection(sap_id, sap_db);
 
                 string orderBy = paginate.OrderBy[0].ToString().ToUpper() + paginate.OrderBy[1..];
                 //string queryFilter = $"DocumentStatus eq '{status}' and Cancelled eq '{cancelled}' and DocDate ge '{dateFrom}' and DocDate le '{dateTo}'" + paginate.Filter;

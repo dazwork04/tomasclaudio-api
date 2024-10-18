@@ -17,6 +17,7 @@ namespace SAPB1SLayerWebAPI.Context
         public DbSet<ORCT> ORCT { get; set; }
         public DbSet<OVPM> OVPM { get; set; }
         public DbSet<OSRI> OSRI { get; set; }
+        public DbSet<OUSR> OUSR { get; set; }
 
     }
 }

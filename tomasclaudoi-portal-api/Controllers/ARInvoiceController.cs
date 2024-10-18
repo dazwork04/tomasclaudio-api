@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SAPB1SLayerWebAPI.Context;
 using SAPB1SLayerWebAPI.Models;
 using SARB1SLayerWebARI.Services;
 
@@ -10,7 +11,8 @@ namespace SAPB1SLayerWebAPI.Controllers
     public class ARInvoiceController : ControllerBase
     {
         private readonly ARInvoiceService ariService;
-        public ARInvoiceController() => ariService = new();
+        //public ARInvoiceController() => ariService = new();
+        public ARInvoiceController(IConfiguration configuration) => ariService = new(configuration);
 
         // GET AR INVOICES
         [HttpPost("GetARInvoices/{userId}/{companyDB}/{status}/{dateFrom}/{dateTo}")]

@@ -16,7 +16,7 @@ namespace SAPB1SLayerWebAPI.Controllers
         private readonly AuthService authService;
         #endregion
 
-        public AuthController(AuthDbContext authDbContext, SboDbContext sboDbContext, IConfiguration configuration) => authService = new(authDbContext, sboDbContext, configuration);
+        public AuthController(AuthDbContext authDbContext, SboDbContext sboDbContext, IConfiguration configuration, MainDbContext mainDbContext) => authService = new(authDbContext, sboDbContext, configuration, mainDbContext);
 
         //
         [HttpGet]
@@ -24,7 +24,8 @@ namespace SAPB1SLayerWebAPI.Controllers
 
         // LOGIN
         [HttpPost("Login")]
-        public async Task<IActionResult> Login(LoginCredential loginCred) => Ok(await authService.LoginAsync(loginCred));
+        //public async Task<IActionResult> Login(LoginCredential loginCred) => Ok(await authService.LoginAsync(loginCred));
+        public async Task<IActionResult> Login() => Ok(await authService.LoginAsync());
 
         // LOGOUT - userId
         [HttpPost("Logout/{userId}")]
